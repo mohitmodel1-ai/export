@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Export Company Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+
+        header {
+            background: #0A6EBD;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #000;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #0A6EBD;
+        }
+
+        section {
+            padding: 30px 20px;
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        p.center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            background: #fafafa;
+            border-radius: 8px;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #0A6EBD;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #0A6EBD;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: .9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0A6EBD;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            opacity: .9;
+        }
+
+        /* Hero slider */
+        .hero-slider {
+            max-width: 1000px;
+            margin: 25px auto 0;
+            text-align: center;
+        }
+
+        .hero-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .hero-caption {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50px;
+            padding: 12px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 200;
+        }
+
+        .whatsapp-float span {
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            opacity: 0.9;
+        }
+
+        /* Flags & certificates */
+        .flags-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flag-card {
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 8px;
+            min-width: 120px;
+            text-align: center;
+            background: #fafafa;
+            font-size: 24px;
+        }
+
+        .flag-card p {
+            margin: 5px 0 0;
+            font-size: 13px;
+        }
+
+        .cert-list {
+            max-width: 500px;
+            margin: 20px auto 0;
+            font-size: 14px;
+        }
+
+        /* Pricing table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            max-width: 900px;
+            margin: 20px auto 0;
+            font-size: 14px;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .pricing-table th {
+            background: #0A6EBD;
+            color: #fff;
+        }
+
+        .pricing-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        @media (max-width:600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px 6px;
+                font-size: 13px;
+            }
+
+            .hero-caption {
+                font-size: 16px;
+            }
+
+            .whatsapp-float span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+        <h1>[Your Company Name]</h1>
+        <p>Trusted Export Partner Worldwide</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#garments">Garments</a>
+        <a href="#fruits">Fruits & Vegetables</a>
+        <a href="#dry">Dry Items</a>
+      
+        <a href="#global">Global Presence</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section>
+        <h2>Welcome</h2>
+        <p class="center">
+            We export high-quality garments, fresh fruits & vegetables, and premium dry food items
+            to international markets with reliable quality, professional packing, and on-time delivery.
+        </p>
+
+        <!-- Hero slider -->
+        <div class="hero-slider">
+            <!-- using Unsplash dynamic category images -->
+            <img id="hero-slider-img" src="https://t3.ftcdn.net/jpg/03/74/09/14/240_F_374091439_LCCKOO9w4rxkAMiaFq56lK1tKec1uFL6.jpg" alt="Export Products Banner" />
+            <div id="hero-caption" class="hero-caption">High-quality Garments Export</div>
+        </div>
+    </section>
+
+    <!-- GARMENTS SECTION -->
+    <section id="garments">
+        <h2>Garments We Export</h2>
+        <p class="center">Premium clothing for men, women, and kids.</p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?tshirt,clothes" alt="T-Shirts" />
+                <h4>T-Shirts</h4>
+                <p>100% cotton, export quality for Europe & Middle East.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?jeans,denim" alt="Jeans" />
+                <h4>Jeans</h4>
+                <p>Durable denim, various fits & washes.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?kids,clothes" alt="Kids Wear" />
+                <h4>Kids Wear</h4>
+                <p>Soft, skin-friendly fabrics for children.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?ladies,fashion,dress" alt="Ladies Wear" />
+                <h4>Ladies Wear</h4>
+                <p>Trendy designs with premium finishing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRUITS & VEGETABLES -->
+    <section id="fruits">
+        <h2>Fresh Fruits & Vegetables</h2>
+        <p class="center">Farm-fresh, hygienically handled and professionally packed for export.</p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?mango,fruit" alt="Mangoes" />
+                <h4>Mangoes</h4>
+                <p>Alphonso & Kesar varieties, export-grade, packed in ventilated boxes.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?banana,bananas" alt="Bananas" />
+                <h4>Bananas</h4>
+                <p>Cavendish bananas, controlled ripening, strong cartons.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?onion,onions" alt="Onions" />
+                <h4>Onions</h4>
+                <p>Red onions with long shelf life, packed in mesh bags.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?tomato,tomatoes,vegetable" alt="Tomatoes" />
+                <h4>Tomatoes</h4>
+                <p>Firm, fresh tomatoes ideal for export routes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRY ITEMS -->
+    <section id="dry">
+        <h2>Dry Items We Export</h2>
+        <p class="center">High-quality grains, pulses & spices with hygienic packing.</p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?rice,grains" alt="Rice" />
+                <h4>Rice</h4>
+                <p>Basmati & non-basmati rice in 5kg, 10kg & 25kg bags.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?lentils,pulses" alt="Pulses" />
+                <h4>Pulses</h4>
+                <p>Toor, chana, masoor, moong and more.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/featured/?spices,masala" alt="Spices" />
+                <h4>Spices</h4>
+                <p>Turmeric, chili, coriander, garam masala blends.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING & MOQ -->
+    
+
+    <!-- GLOBAL PRESENCE & CERTIFICATIONS -->
+    <section id="global">
+        <h2>Global Presence & Certifications</h2>
+        <p class="center">
+            We cater to multiple international markets and follow strict quality standards.
+        </p>
+
+        <div class="flags-row">
+            <div class="flag-card">
+                🇮🇳
+                <p>India (Origin)</p>
+            </div>
+            <div class="flag-card">
+                🇦🇪
+                <p>UAE / GCC</p>
+            </div>
+            <div class="flag-card">
+                🇸🇦
+                <p>Saudi Arabia</p>
+            </div>
+            <div class="flag-card">
+                🇬🇧
+                <p>United Kingdom</p>
+            </div>
+            <div class="flag-card">
+                🇺🇸
+                <p>United States</p>
+            </div>
+        </div>
+
+        <ul class="cert-list">
+            <li>ISO 9001:2015 – Quality Management System (sample).</li>
+            <li>FSSAI / Food Safety Registration for edible items (as applicable).</li>
+            <li>Phytosanitary & fumigation certificates for agro exports.</li>
+            <li>Export documentation support: Invoice, Packing List, BL, COO, etc.</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p class="center">For business inquiries, bulk orders or export deals, fill the form or contact us directly.</p>
+
+        <form style="max-width:600px; margin:20px auto 0;">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="text" placeholder="Country" required />
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <div style="text-align:center;">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+
+        <p class="center" style="margin-top:15px;">
+            📍 Address: [Enter Company Address Here] <br />
+            📞 Phone: +91 98XXXXXX00 <br />
+            💬 WhatsApp: +91 98XXXXXX00 <br />
+            ✉ Email: info@yourcompany.com
+        </p>
+    </section>
+
+    <footer>
+        © 2025 [Your Company Name]. All Rights Reserved.
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/9198XXXXXX00" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        💬 <span>WhatsApp</span>
+    </a>
+
+    <!-- Slider Script -->
+    <script>
+        const slides = [{
+                src: "https://source.unsplash.com/featured/?garments,clothes,fashion",
+                caption: "High-quality Garments Export",
+            },
+            {
+                src: "https://source.unsplash.com/featured/?fruits,vegetables,https://media.istockphoto.com/id/139496979/photo/assortment-of-fruits-and-vegetables-background.jpg?s=1024x1024&w=is&k=20&c=KcFM8yH2vc3SoAIa0CbX2lVuEA61OBgtKFB1Da8um00=",
+                caption: "Fresh Fruits & Vegetables Export",
+            },
+            {
+                src: "https://source.unsplash.com/featured/?rice,spices,grains",
+                caption: "Premium Dry Food Items Export",
+            },
+        ];
+
+        let currentSlide = 0;
+        const imgEl = document.getElementById("hero-slider-img");
+        const captionEl = document.getElementById("hero-caption");
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            imgEl.src = slides[currentSlide].src;
+            captionEl.textContent = slides[currentSlide].caption;
+        }, 4000);
+    </script>
+
+</body>
+
+</html>
